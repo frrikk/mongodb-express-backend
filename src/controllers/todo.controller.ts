@@ -1,13 +1,12 @@
 import { Todo } from "../models/todo.model";
 import { Request, Response } from "express";
 
-export const getTodos = async (_: Request, res: Response): Promise<void> => {
+export const getTodos = async (_: Request, res: Response) => {
   const todos = await Todo.find();
   res.status(200).json(todos);
 };
 
 export const createTodo = async (req: Request, res: Response) => {
-  console.log(req);
   if (!req.body) {
     res.status(400).json({ error: "Invalid request body" });
     return;
