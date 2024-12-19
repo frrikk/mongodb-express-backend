@@ -11,4 +11,4 @@ router.get("/", getTodos);
 router.post("/", createTodo);
 router.delete("/:id", deleteTodo);
 
-export default router;
+export { router as todoRoute };
